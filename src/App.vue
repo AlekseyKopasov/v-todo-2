@@ -1,32 +1,99 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view/>
   </div>
 </template>
 
+<script>
+
+export default {};
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  :root {
+  --main: #2F4858;
+  --white: #fff;
 }
+* {
+  padding: 0;
+  margin: 0;
+  transition: all 0.3s;
+}
+#app{
+  width: 320px;
+  box-shadow: 0 3px 20px #00000023;
+  font-family: 'Gilroy', sans-serif;
+  padding: 10px;
+  margin: 20px 0 0 20px;
+  color: var(--main);
+}
+.stats {
+  margin: 0px;
+}
+.stats__title {
+  margin: -10px -10px 10px -10px;
+  padding: 10px;
+  background-color: var(--main);
+  color: var(--white);
+  font-weight: 500;
+}
+.task {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: -10px -10px 10px -10px;
+  padding: 10px;
+  max-width: 100%;
+}
+.task:hover {
+  background-color: #2f485811;
+}
+.task__title {
+  font-size: 18px;
+}
+.task__desc {
+  font-weight: 500;
+  font-size: 16px;
+}
+.task__done {
+  height: 30px;
+  width: 30px !important;
+  border: none;
+  background-color: unset;
+}
+.task__done:hover {
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: #9ee493bb;
+}
+.add_task {
+  display: flex;
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+}
+.add_task__input {
+  width: 80%;
+}
+.add_task__input input, textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 5px 0 5px 5px;
+  font-family: 'Gilroy',sans-serif;
+  border: 2px solid #2f485811;
+  border-radius: 4px;
+}
+.add_task__input input {
+  margin-bottom: 5px;
+}
+.add_task__btn {
+  width: 20%;
+  border: none;
+  margin-left: 20px;
+  background-color: unset;
+}
+.add_task__btn:hover {
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: #2f485811;
 }
 </style>
